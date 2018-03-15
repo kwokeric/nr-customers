@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'customer/index'
+
   get 'home/index'
   get 'home/timestamp'
 
