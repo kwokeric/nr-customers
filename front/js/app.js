@@ -1,11 +1,8 @@
-/**
- * @fileOverview App main entry point.
- */
-
 import 'babel-polyfill';
 
 import React from 'react';
 import ReactDom from 'react-dom';
+import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
@@ -14,13 +11,13 @@ import thunkMiddleware from 'redux-thunk';
 import '../css/app.scss';
 
 import rootReducer from './reducers/root-reducer';
-import HelloWorld from './containers/HelloWorldContainer';
+import routes from './routes';
 import getLogger from './util/logger';
 
 const log = getLogger('App');
 
 const init = () => {
-  log.info('init() :: App starts booting...');
+  log.info('init() :: App booting up...');
 
   // Check for devToolsExtension
   const create = window.devToolsExtension ?
@@ -34,7 +31,7 @@ const init = () => {
 
   ReactDom.render(
     <Provider store={store}>
-      <HelloWorld />
+      <Router history={browserHistory} routes={routes} />
     </Provider>,
     document.getElementById('app'),
   );
