@@ -1,0 +1,47 @@
+.search-container {
+  font-family: sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #eee;
+  padding-left: 50px;
+  box-sizing: border-box;
+
+  .title {
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .text-input {
+    width: 400px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    padding-left: 20px;
+  }
+}
+
+.customer-container {
+  padding: 10px 50px;
+
+  .results {
+    font-size: 12px;
+    color: #ccc;
+    padding: 10px 0;
+  }
+
+  .customer {
+    text-transform: capitalize;
+    padding: 5px 0;
+  }
+}
