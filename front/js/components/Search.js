@@ -42,6 +42,23 @@ class Search extends React.Component {
       });
   }
 
+  renderHeader() {
+    return (
+      <div className="header">
+        <div className="title">Customer directory</div>
+        <input className="text-input" type="text" value={this.state.query} placeholder="Search" onChange={this.handleChange} />
+      </div>
+    )
+  }
+
+  renderResults() {
+    return (
+      <div className="customer-container">
+        <div className="results">{this.state.data.length} results</div>
+        {this.renderCustomers()}
+      </div>
+    )
+  }
 
   renderCustomers() {
     return this.state.data.map((c, idx) => (
@@ -60,11 +77,8 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search-container">
-        <div className="title">Customer directory</div>
-        <input className="text-input" type="text" value={this.state.query} placeholder="Search" onChange={this.handleChange} />
-        <div className="customer-container">
-          {this.renderCustomers()}
-        </div>
+        {this.renderHeader()}
+        {this.renderResults()}
       </div>
     );
   }
