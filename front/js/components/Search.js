@@ -11,6 +11,7 @@ class Search extends React.Component {
     this.state = {
       query: props.location.query.q || '',
       data: []
+      // hasLoaded: true
     };
   }
 
