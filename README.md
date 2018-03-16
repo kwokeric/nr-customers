@@ -1,11 +1,11 @@
 # Filter Customers
 
 ## Features
-- Input field
+- Input field - customers are searchable by first or last name
 - Automatic filtering on key press
-- Customers are searchable by first or last name
 - Results listing customers that match search query
 - Query is updated in URL as a query parameter
+- Rails + React
 
 ## Running the application
 

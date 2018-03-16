@@ -7,7 +7,6 @@ class Search extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.fetchResults = this.fetchResults.bind(this);
-    this.renderCustomer = this.renderCustomer.bind(this);
 
     this.state = {
       query: props.location.query.q || '',
@@ -48,7 +47,7 @@ class Search extends React.Component {
         <div className="title">Customer directory</div>
         <input className="text-input" type="text" value={this.state.query} placeholder="Search" onChange={this.handleChange} />
       </div>
-    )
+    );
   }
 
   renderResults() {
@@ -57,7 +56,7 @@ class Search extends React.Component {
         <div className="results">{this.state.data.length} results</div>
         {this.renderCustomers()}
       </div>
-    )
+    );
   }
 
   renderCustomers() {
