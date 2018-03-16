@@ -52,17 +52,19 @@ class Search extends React.Component {
   renderCustomer(c, idx) {
     return (
       <div className="customer" key={idx}>
-        <h1>{c.first_name} {c.last_name}</h1>
+        {c.first_name} {c.last_name}
       </div>
     );
   }
 
   render() {
     return (
-      <div>
-        <input type="text" value={this.state.query} onChange={this.handleChange} />
-        supppppppp
-        {this.renderCustomers()}
+      <div className="search-container">
+        <div className="title">Customer directory</div>
+        <input className="text-input" type="text" value={this.state.query} placeholder="Search" onChange={this.handleChange} />
+        <div className="customer-container">
+          {this.renderCustomers()}
+        </div>
       </div>
     );
   }
