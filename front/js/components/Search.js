@@ -21,8 +21,8 @@ class Search extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.params.query !== this.state.query) {
-      this.fetchResults(nextProps.params.query);
+    if (nextProps.location.query.q !== this.state.query) {
+      this.fetchResults(nextProps.location.query.q);
     }
   }
 
@@ -33,7 +33,6 @@ class Search extends React.Component {
   }
 
   fetchResults(query) {
-    console.log('fetching...');
     fetch(`http://localhost:3000/customer/?q=${query}`)
       .then((response) => {
         return response.json();
