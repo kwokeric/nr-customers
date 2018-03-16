@@ -9,5 +9,5 @@
 require 'faker'
 
 500.times do |index|
-  Customer.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+  Customer.create!(first_name: Faker::Name.first_name.downcase, last_name: Faker::Name.last_name.downcase)
 end
