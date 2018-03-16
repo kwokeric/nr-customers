@@ -1,15 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router';
-import HelloWorld from './components/HelloWorld';
-
-function onEnterApp() {
-
-}
+import Search from './components/Search';
 
 const routes = (
-  <Route path="/" component={HelloWorld} onEnter={onEnterApp}>
-    <Route path="/search(/:query)" component={HelloWorld} />
-  </Route>
+  <Route path="/(:query)" component={Search} />
 );
 
 export default routes;

@@ -1,15 +1,15 @@
 class CustomerController < ApplicationController
   def index
-    Rails.logger.info params["name"]
+    # Rails.logger.info params["q"]
 
     if params.include?("q")
       query = "#{params["q"].downcase}%"
-      result = Customer.where("first_name LIKE ? OR last_name LIKE ?", query, query)
+      @customers = Customer.where("first_name LIKE ? OR last_name LIKE ?", query, query)
     else
-      result = Customer.all
+      @customers = Customer.all
     end
 
-    render json: result
+    render json: @customers
   end
 
   # def create
